@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <h1>Novo usuário</h1>
+  <sst-form (sstSubmit)="onSubmit($event)">
+    <sst-wrap-control>
+      <label>Nome</label>
+      <sst-input name="name" required></sst-input>
+    </sst-wrap-control>
+    <sst-wrap-control>
+      <label>E-mail</label>
+      <sst-input name="email" required type="email"></sst-input>
+    </sst-wrap-control>
+    <sst-group-control name="address">
+      <h3>Endereço</h3>
+      <div class="row">
+        <div class="col-md-8">
+          <sst-wrap-control>
+            <label for="">Rua</label>
+            <sst-input name="street"></sst-input>
+          </sst-wrap-control>
+        </div>
+        <div class="col-md-4">
+          <sst-wrap-control>
+            <label for="">Numero</label>
+            <sst-input name="number"></sst-input>
+          </sst-wrap-control>
+        </div>
+      </div>
+    </sst-group-control>
+    <h3>Regras de acesso</h3>
+    <sst-array-control name="roles">
+      <sst-wrap-control *sstFormArrayTemplate>
+        <sst-input name="role"></sst-input>
+      </sst-wrap-control>
+    </sst-array-control>
+    <div class="text-right mt-4">
+      <button class="btn btn-secondary mr-2" type="button" routerLink="../">Cancelar</button>
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </div>
+  </sst-form>
+</div>
